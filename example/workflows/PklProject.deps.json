@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "resolvedDependencies": {
+    "package://github.com/mike-neck/pkl-argo-workflows@0": {
+      "type": "local",
+      "uri": "projectpackage://github.com/mike-neck/pkl-argo-workflows@0.0.0-SNAPSHOT",
+      "path": "../../build/generated/pkl/src/main/pkl"
+    }
+  }
+}

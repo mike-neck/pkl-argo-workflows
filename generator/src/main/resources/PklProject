@@ -1,0 +1,13 @@
+amends "pkl:Project"
+
+package {
+  name = "pkl-argo-workflows"
+  authors {
+    "mike-neck<email@example.com>"
+  }
+  version = "0.0.0"
+  baseUri = "package://github.com/mike-neck/\(name)"
+  packageZipUrl = "https://github.com/mike-neck/\(name)/releases/download/\(name)@\(version)/\(name)@\(version).zip"
+  sourceCode = "https://github.com/mike-neck/\(name)"
+  license = "Apache-2.0"
+}

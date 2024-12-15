@@ -1,0 +1,57 @@
+import "@argo-workflows/io/argoproj/workflow/v1alpha1/Workflow.pkl"
+import "@argo-workflows/io/argoproj/workflow/v1alpha1/WorkflowStep.pkl"
+import "@argo-workflows/io/argoproj/workflow/v1alpha1/Template.pkl"
+
+workflow: Workflow = new {
+  spec {
+    entrypoint = "main"
+    templates {
+      local echoTask: Template = new {
+        name = "echo"
+        inputs {
+          parameters {
+            new {
+              name = "message"
+            }
+            new {
+              name = "target"
+            }
+          }
+        }
+        container {
+          image = "busybox"
+          command {
+            "echo"
+            "{{inputs.parameters.message}}" + "{{inputs.parameters.target}}"
+          }
+        }
+      }
+      new {
+        name = "main"
+        steps {
+          new  {
+            new WorkflowStep {
+              name = "hello-task"
+              template = "task"
+              arguments {
+                parameters {
+                  new {
+                    name = "text"
+                    value = "hello"
+                  }
+                  new {
+                    name = "target"
+                    value = "argo-workflows"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      new {
+        name = "task"
+      }
+    }
+  }
+}
