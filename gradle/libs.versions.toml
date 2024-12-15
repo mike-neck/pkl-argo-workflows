@@ -1,0 +1,16 @@
+[versions]
+open-api = "7.9.0"
+jsonschema2pojo = "1.2.2"
+jackson = "2.18.0"
+jackson-module-kotlin = "2.18.0"
+java-template-engine = "3.1.14"
+
+[libraries]
+openApiGenerator = { group = "org.openapitools", name = "openapi-generator", version.ref = "open-api" }
+jsonschema2pojo = { group = "org.jsonschema2pojo", name = "jsonschema2pojo-core", version.ref = "jsonschema2pojo" }
+jackson = { group = "com.fasterxml.jackson", name = "jackson-bom", version.ref = "jackson" }
+jacksonModuleKotlin = { group = "com.fasterxml.jackson.module", name = "jackson-module-kotlin", version.ref = "jackson-module-kotlin" }
+java-template-engine = { group = "gg.jte", name = "jte", version.ref = "java-template-engine" }
+
+[plugins]
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version = "2.0.0" }
